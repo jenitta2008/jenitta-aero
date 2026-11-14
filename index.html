@@ -2,148 +2,742 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jenitta S. | Aerospace Engineer</title>
+<title>Jenitta S. | Aerospace Engineering Portfolio</title>
 
-    <style>
-        body {
-            background-color: #071426;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        header {
-            text-align: center;
-            padding: 100px 20px;
-        }
+/* GLOBAL DESIGN */
 
-        h1 {
-            font-size: 48px;
-            color: #55b8ff;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        h2 {
-            color: #55b8ff;
-        }
+body {
+    background: #06111f;
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
+}
 
-        p {
-            line-height: 1.7;
-            color: #cbd5e1;
-        }
+:root {
+    --blue: #36aaff;
+    --light-blue: #8bd3ff;
+    --navy: #06111f;
+    --card: #0c1d30;
+}
 
-        section {
-            padding: 40px 10%;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .button {
-            display: inline-block;
-            background: #1689d4;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+/* NAVIGATION */
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #94a3b8;
-        }
-    </style>
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(6,17,31,0.95);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    border-bottom: 1px solid #17334e;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--blue);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: #c7d8e8;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    position: relative;
+    background:
+    radial-gradient(circle at 80% 40%,
+    #123c63 0%, transparent 35%);
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: fadeUp 1.2s ease;
+}
+
+.tag {
+    color: var(--blue);
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero h2 {
+    font-size: 22px;
+    color: #b5cce0;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #a9bfd3;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--blue);
+    color: #06111f;
+    padding: 14px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 12px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.outline {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    background: transparent;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 100px 10%;
+}
+
+.section-label {
+    color: var(--blue);
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 35px;
+}
+
+.description {
+    color: #a9bfd3;
+    line-height: 1.9;
+    max-width: 850px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #091827;
+}
+
+/* SKILLS */
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card);
+    padding: 28px;
+    border: 1px solid #183650;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--blue);
+}
+
+.skill-card h3 {
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    color: #b5c7d8;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* PROJECTS */
+
+.projects {
+    background: #091827;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid #1b3b56;
+    border-radius: 12px;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 35px rgba(54,170,255,0.12);
+}
+
+.project-number {
+    color: var(--blue);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.project-card p {
+    color: #a9bfd3;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 6px 12px;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    color: var(--light-blue);
+    font-size: 11px;
+}
+
+/* RESEARCH */
+
+.research {
+    border-left: 3px solid var(--blue);
+    padding: 25px 30px;
+    background: var(--card);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    background: #091827;
+}
+
+.experience-box {
+    border-left: 2px solid var(--blue);
+    padding: 10px 25px;
+    margin-bottom: 30px;
+}
+
+.experience-box h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.experience-box p {
+    color: #a9bfd3;
+    line-height: 1.8;
+}
+
+/* ACHIEVEMENTS */
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.achievement {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #1b3b56;
+}
+
+.achievement h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.achievement p {
+    color: #a9bfd3;
+    line-height: 1.7;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: radial-gradient(circle, #123c63, #06111f 65%);
+}
+
+.contact p {
+    color: #b5cce0;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #7892a9;
+    border-top: 1px solid #17334e;
+    font-size: 13px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width: 750px) {
+
+    nav {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: 70px 7%;
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>JENITTA S.</h1>
+<!-- NAVIGATION -->
 
-        <h2>Aeronautical Engineering | Aerospace Research</h2>
+<nav>
 
-        <p>
-            Exploring Aerodynamics, CFD, UAV Design,
-            Aerospace Materials and Innovation.
-        </p>
+<div class="logo">JENITTA S.</div>
 
-        <a href="#projects" class="button">Explore My Projects</a>
-    </header>
+<div class="nav-links">
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#skills">SKILLS</a>
+<a href="#projects">PROJECTS</a>
+<a href="#research">RESEARCH</a>
+<a href="#experience">EXPERIENCE</a>
+<a href="#contact">CONTACT</a>
+</div>
 
-    <section id="about">
-        <h2>About Me</h2>
+</nav>
 
-        <p>
-            I am an Aeronautical Engineering undergraduate
-            at Sathyabama Institute of Science and Technology.
-            I am interested in aerospace research, computational
-            analysis, aircraft design and engineering innovation.
-        </p>
-    </section>
 
-    <section id="skills">
-        <h2>Technical Interests & Skills</h2>
+<!-- HOME -->
 
-        <p>
-            CAD: SolidWorks, Fusion 360
-            <br>
-            Simulation: ANSYS
-            <br>
-            Programming: Python, C, C++, MATLAB
-            <br>
-            Interests: Aerodynamics, CFD, UAV Design,
-            Aircraft Structures and Manufacturing.
-        </p>
-    </section>
+<header class="hero" id="home">
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
+<div class="hero-content">
 
-        <h3>Basalt Fibre Reinforced Gyroid Composite</h3>
-        <p>
-            Research on lightweight UAV fuselage panels
-            using PETG-CF gyroid structures and basalt fibre.
-        </p>
+<div class="tag">AEROSPACE ENGINEERING PORTFOLIO</div>
 
-        <h3>CFD-Based Aircraft Drag Reduction</h3>
-        <p>
-            Ongoing research exploring boundary-layer behaviour,
-            shape optimisation and riblet-based drag reduction.
-        </p>
+<h1>JENITTA <span>S.</span></h1>
 
-        <h3>UAV Design and Fabrication</h3>
-        <p>
-            Practical exposure to Fusion 360 modelling,
-            UAV structural components and drone assembly.
-        </p>
-    </section>
+<h2>Aeronautical Engineering Undergraduate</h2>
 
-    <section id="leadership">
-        <h2>Leadership & Experience</h2>
+<p>
+Exploring the science of flight through aerodynamics,
+computational fluid dynamics, UAV development,
+advanced materials and aerospace research.
+Driven by curiosity, engineering innovation
+and the pursuit of better aircraft technologies.
+</p>
 
-        <p>
-            Joint Secretary – IEI Sathyabama Aero Student Chapter.
-            <br>
-            Internship – Aeroin Spacetech, May 2026.
-        </p>
-    </section>
+<a href="#projects" class="button">
+Explore Projects
+</a>
 
-    <section id="contact">
-        <h2>Contact</h2>
+<a href="#about" class="button outline">
+Discover More
+</a>
 
-        <p>
-            GitHub:
-            <a href="https://github.com/jenitta2008">
-                Visit My GitHub
-            </a>
-        </p>
-    </section>
+</div>
 
-    <footer>
-        <p>Exploring. Designing. Simulating. Innovating.</p>
-        <p>© 2026 Jenitta S.</p>
-    </footer>
+</header>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="section-label">01 / ABOUT</div>
+
+<h2 class="section-title">About Me</h2>
+
+<p class="description">
+
+I am an Aeronautical Engineering undergraduate at
+Sathyabama Institute of Science and Technology.
+
+My academic interests include aerodynamics,
+fluid mechanics, aircraft structures, computational
+simulation and aerospace manufacturing.
+
+I enjoy exploring engineering challenges through
+technical design, research, practical fabrication
+and computational approaches.
+
+I currently serve as the Joint Secretary of the
+IEI Sathyabama Aero Student Chapter, contributing
+to student engineering activities and technical
+engagement.
+
+</p>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-label">02 / TECHNICAL PROFILE</div>
+
+<h2 class="section-title">Technical Skills & Interests</h2>
+
+<div class="skill-grid">
+
+<div class="skill-card">
+<h3>CAD & DESIGN</h3>
+<p>Fusion 360, SolidWorks, 3D Modelling and UAV component design.</p>
+</div>
+
+<div class="skill-card">
+<h3>SIMULATION</h3>
+<p>ANSYS exposure, computational analysis and CFD learning.</p>
+</div>
+
+<div class="skill-card">
+<h3>PROGRAMMING</h3>
+<p>Python, C, C++ and MATLAB learning.</p>
+</div>
+
+<div class="skill-card">
+<h3>AEROSPACE</h3>
+<p>Aerodynamics, fluid mechanics, aircraft structures and aeromodelling.</p>
+</div>
+
+<div class="skill-card">
+<h3>MATERIALS</h3>
+<p>Composite materials, gyroid structures and experimental material characterisation.</p>
+</div>
+
+<div class="skill-card">
+<h3>MANUFACTURING</h3>
+<p>3D printing, UAV fabrication and composite hand layup.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+<div class="section-label">03 / ENGINEERING WORK</div>
+
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<div class="project-number">01</div>
+
+<h3>Basalt Fibre Reinforced Gyroid Composite</h3>
+
+<p>
+Development and experimental investigation of
+lightweight UAV fuselage sandwich panels using
+polycarbonate face sheets, PETG-CF gyroid core
+and chopped basalt fibre reinforcement.
+</p>
+
+<span class="status">EXPERIMENTAL PROJECT</span>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-number">02</div>
+
+<h3>CFD-Based Aircraft Drag Reduction</h3>
+
+<p>
+Ongoing research exploring boundary-layer behaviour,
+laminar flow, transition, geometry optimisation
+and riblet-based skin-friction drag reduction.
+</p>
+
+<span class="status">ONGOING RESEARCH</span>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-number">03</div>
+
+<h3>UAV Design & Fabrication</h3>
+
+<p>
+Practical exposure to UAV modelling, Fusion 360
+design, structural components, ANSYS learning
+and drone assembly.
+</p>
+
+<span class="status">DESIGN & FABRICATION</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+<div class="section-label">04 / RESEARCH</div>
+
+<h2 class="section-title">Research Interests</h2>
+
+<div class="research">
+
+<h3>Computational Aerodynamics</h3>
+
+<p class="description">
+Understanding fluid flow, boundary-layer development,
+transition and aerodynamic drag through computational methods.
+</p>
+
+</div>
+
+<div class="research">
+
+<h3>Advanced Aerospace Materials</h3>
+
+<p class="description">
+Exploring lightweight composite structures,
+gyroid architectures and strength-to-weight performance.
+</p>
+
+</div>
+
+<div class="research">
+
+<h3>Unmanned Aerial Vehicles</h3>
+
+<p class="description">
+Interested in UAV structural design, aeromodelling,
+aircraft configurations and practical development.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+<div class="section-label">05 / EXPERIENCE</div>
+
+<h2 class="section-title">Experience & Leadership</h2>
+
+<div class="experience-box">
+
+<h3>Aeroin Spacetech</h3>
+
+<p>
+Internship | May 2026
+
+<br><br>
+
+Exposure to UAV design, Fusion 360 modelling,
+ANSYS and practical drone assembly.
+Developed a Fusion 360 drone model and participated
+in hardware assembly activities.
+</p>
+
+</div>
+
+<div class="experience-box">
+
+<h3>IEI Sathyabama Aero Student Chapter</h3>
+
+<p>
+Joint Secretary
+
+<br><br>
+
+Student chapter leadership and participation
+in aeronautical engineering activities.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+
+<div class="section-label">06 / ACHIEVEMENTS</div>
+
+<h2 class="section-title">Achievements</h2>
+
+<div class="achievement-grid">
+
+<div class="achievement">
+<h3>Academic Excellence</h3>
+<p>Department first position during first year.</p>
+</div>
+
+<div class="achievement">
+<h3>Technical Presentation</h3>
+<p>Participation in two technical paper presentations.</p>
+</div>
+
+<div class="achievement">
+<h3>Engineering Competition</h3>
+<p>Second prize in a truss-building competition.</p>
+</div>
+
+<div class="achievement">
+<h3>Student Leadership</h3>
+<p>Joint Secretary, IEI Sathyabama Aero Student Chapter.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="section-label">07 / CONNECT</div>
+
+<h2 class="section-title">Let's Connect</h2>
+
+<p>
+Interested in aerospace engineering,
+research, aeromodelling and technical collaboration.
+</p>
+
+<a href="https://github.com/jenitta2008"
+class="button" target="_blank">
+GitHub Profile
+</a>
+
+</section>
+
+
+<footer>
+
+<p>
+JENITTA S. | AEROSPACE ENGINEERING PORTFOLIO
+</p>
+
+<p>
+Exploring. Designing. Simulating. Innovating.
+</p>
+
+<p>© 2026 Jenitta S.</p>
+
+</footer>
 
 </body>
 </html>
